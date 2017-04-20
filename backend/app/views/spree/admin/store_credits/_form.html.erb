@@ -1,9 +1,16 @@
 <div data-hook="admin_store_credit_form_fields" class="row">
-  <div class="col-xs-12">
+  <div class="col-xs-6">
     <%= f.field_container :amount do %>
       <%= f.label :amount, class: 'required' %><br />
       <%= f.number_field :amount, min: 0.00, step: :any %>
       <%= f.error_message_on :amount %>
+    <% end %>
+  </div>
+  <div class="col-xs-6">
+    <%= f.field_container :expires_at do %>
+      <%= f.label :expires_at %>
+      <%= f.field_hint :expires_at %>
+      <%= f.text_field :expires_at, class: 'datepicker fullwidth' %>
     <% end %>
   </div>
   <div class="col-xs-12">
